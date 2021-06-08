@@ -58,7 +58,7 @@ def get_lang() -> str:
     language = CONSOLE.input("[green]Enter language:[/green] ").lower()
 
     if language not in languages_:
-        CONSOLE.print("[bold red]Language is not supported![/bold red]")
+        CONSOLE.print("[bold red]Language not supported![/bold red]")
         close()
     return language
 
@@ -98,7 +98,7 @@ def signal_handler(sig: int, frame: any) -> None:
     :param sig: Signal
     :param frame: Signal Frame
     """
-    messages = ["Goodbye!", "See you next time!", "Bye bye!"]
+    messages = ["Goodbye!", "See you next time!", "Bye !"]
     if sig == SIGINT:  # If SIGINT - Close application
         CONSOLE.print(f"\n\n{random.choice(messages)}\n")
         sys.exit(0)
